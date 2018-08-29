@@ -50,7 +50,10 @@ class ClassifierManager {
             // Libraries with no imports.
             if (libId == "rb.rails") {
                 prob > 0.91
-            } else {
+            } else if (libId.startsWith(Lang.PLPGSQL)) {
+                prob > 0.7
+            }
+            else {
                 prob > 0.5
             }
         }
